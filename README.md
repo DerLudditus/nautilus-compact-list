@@ -98,15 +98,12 @@ Top 10 relevant features:
 > [!NOTE]
 > The context menu items added by this extension have translations for a good number of major languages in [`./nautilus-compact-list/i18n.py`](./nautilus-compact-list/i18n.py), using a localization catalog that prevents the complication of using `.po` files.
 
-<div align="center" style="width:80%; margin:0 auto">
-
-![](./screenshots/locale_1.png)
-
+<div align="center">
+  <img src="./screenshots/locale_1.png" width="67%">
 </div>
-<div align="center" style="width:40%; margin:0 auto">
 
-![](./screenshots/locale_2.png)
-
+<div align="center">
+  <img src="./screenshots/locale_2.png" width="33%">
 </div>
 
 ### 4. Installation
