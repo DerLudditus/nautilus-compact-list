@@ -1,0 +1,22 @@
+Source: nautilus-compact-list
+Section: gnome
+Priority: optional
+Maintainer: Homo Ludditus <DerLudditus@gmail.com>
+Build-Depends: debhelper-compat (= 13), python3
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: https://github.com/nautilus-compact-list/nautilus-compact-list
+
+Package: nautilus-compact-list
+Architecture: all
+Depends: ${misc:Depends},
+         python3-nautilus,
+         python3-gi,
+         gir1.2-gtk-4.0,
+         gir1.2-adw-1
+Description: Classic Nautilus-style Compact List view for GNOME Files
+ Brings back the classic multi-column Compact List view (present in GNOME 2
+ Nautilus, Caja, Thunar, Dolphin, PCManFM/PCManFM-Qt) to modern GNOME Files
+ (GTK4 Nautilus) with variable-width columns, smart filename shortening, and
+ status bar.
+

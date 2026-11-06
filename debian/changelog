@@ -1,0 +1,7 @@
+nautilus-compact-list (0.1.0-20) trixie; urgency=medium
+
+  * In-tree multi-language localization catalog for custom UI strings:
+    - Added menu translations across major languages in nautilus_compact_list/i18n.py
+      for "Set Max Column Width…", "Max chars:", and "Apply". Zero .mo overhead.
+
+ -- Homo Ludditus <DerLudditus@gmail.com>  Thu, 05 Nov 2026 21:30:00 +0200

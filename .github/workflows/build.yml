@@ -1,0 +1,72 @@
+name: Build Packages
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build-deb:
+    name: Universal .deb (Ubuntu LTS / Debian)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            python3 \
+            python3-gi \
+            gir1.2-gtk-4.0 \
+            libglib2.0-bin \
+            dpkg-dev \
+            make \
+            tar \
+            gzip
+
+      - name: Build universal .deb package
+        run: ./build-deb.sh
+
+      - name: Upload .deb artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: universal-deb
+          path: dist/*.deb
+          if-no-files-found: error
+
+  build-rpm:
+    name: Universal .rpm (Fedora / RHEL)
+    runs-on: ubuntu-latest
+    container: registry.fedoraproject.org/fedora:45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          dnf install -y \
+            python3 \
+            python3-gobject \
+            gtk4 \
+            glib2-devel \
+            rpm-build \
+            rpmdevtools \
+            make \
+            tar \
+            gzip
+
+      - name: Build universal .rpm package
+        run: ./build-rpm.sh
+
+      - name: Upload .rpm artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: universal-rpm
+          path: dist/*.rpm
+          if-no-files-found: error

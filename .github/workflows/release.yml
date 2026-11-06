@@ -1,0 +1,77 @@
+name: Release Packages
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Git tag to release (leave empty to use current tag/commit)'
+        required: false
+        default: ''
+
+jobs:
+  publish-release:
+    name: Publish Release from Existing Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch and prepare tested artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # 1. Determine release tag name
+          if [ -n "${{ inputs.tag }}" ]; then
+            RELEASE_TAG="${{ inputs.tag }}"
+          else
+            RELEASE_TAG="${GITHUB_REF_NAME}"
+          fi
+          echo "RELEASE_TAG=$RELEASE_TAG" >> "$GITHUB_ENV"
+          echo "Publishing release for tag: $RELEASE_TAG"
+
+          # 2. Determine target commit SHA
+          TARGET_COMMIT=$(git rev-list -n 1 "$RELEASE_TAG" 2>/dev/null || git rev-parse HEAD)
+          echo "Target commit SHA: $TARGET_COMMIT"
+
+          # 3. Locate the latest successful 'Build Packages' run for this commit
+          echo "Searching for successful 'Build Packages' run for commit $TARGET_COMMIT..."
+          RUN_ID=$(gh run list --workflow="build.yml" --commit="$TARGET_COMMIT" --status=success --json databaseId -q '.[0].databaseId')
+
+          if [ -z "$RUN_ID" ] || [ "$RUN_ID" = "null" ]; then
+            echo "::error::No successful 'Build Packages' workflow run found for commit $TARGET_COMMIT."
+            echo "Please ensure the build on branch 'main' has finished successfully before tagging."
+            exit 1
+          fi
+
+          echo "Found successful build run ID: $RUN_ID"
+
+          # 4. Download artifacts from that run
+          mkdir -p raw-artifacts release-assets
+          gh run download "$RUN_ID" --dir raw-artifacts
+
+          # 5. Collect the clean, universal packages (no distro names in filenames!)
+          if compgen -G "raw-artifacts/universal-deb/*.deb" > /dev/null; then
+            cp raw-artifacts/universal-deb/*.deb release-assets/
+          fi
+          if compgen -G "raw-artifacts/universal-rpm/*.rpm" > /dev/null; then
+            cp raw-artifacts/universal-rpm/*.rpm release-assets/
+          fi
+
+          echo "Prepared release assets:"
+          ls -la release-assets/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          files: release-assets/*
+          generate_release_notes: true

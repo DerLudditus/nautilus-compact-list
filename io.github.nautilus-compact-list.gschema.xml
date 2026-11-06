@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="io.github.nautilus-compact-list" path="/io/github/nautilus-compact-list/">
+    <key name="compact-view-enabled" type="b">
+      <default>false</default>
+      <summary>Enable Compact List view</summary>
+      <description>Whether the Compact List view is active in Nautilus windows.</description>
+    </key>
+    <key name="max-column-width-chars" type="i">
+      <range min="15" max="200"/>
+      <default>50</default>
+      <summary>Maximum column width in characters</summary>
+      <description>Maximum filename character length before smart filename shortening is applied.</description>
+    </key>
+    <key name="shortening-mode" type="s">
+      <default>'smart-suffix'</default>
+      <summary>Filename shortening mode</summary>
+      <description>Shortening strategy for long filenames: 'smart-suffix' (preserves numeric/date endings) or 'middle' (standard middle ellipsis).</description>
+    </key>
+    <key name="icon-size" type="i">
+      <range min="16" max="64"/>
+      <default>16</default>
+      <summary>Compact List icon size</summary>
+      <description>Icon size in pixels for Compact List view (16, 32, or 64).</description>
+    </key>
+  </schema>
+</schemalist>
+

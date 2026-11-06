@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/nautilus-compact-list/usr/share/nautilus-python/extensions
+	mkdir -p debian/nautilus-compact-list/usr/share/glib-2.0/schemas
+	cp nautilus-compact-list.py debian/nautilus-compact-list/usr/share/nautilus-python/extensions/
+	cp -r nautilus_compact_list debian/nautilus-compact-list/usr/share/nautilus-python/extensions/
+	find debian/nautilus-compact-list/usr/share/nautilus-python/extensions/nautilus_compact_list -name "__pycache__" -type d -exec rm -rf {} +
+	cp io.github.nautilus-compact-list.gschema.xml debian/nautilus-compact-list/usr/share/glib-2.0/schemas/
+
+override_dh_builddeb:
+	mkdir -p dist
+	dh_builddeb --destdir=dist
