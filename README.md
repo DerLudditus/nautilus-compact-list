@@ -4,8 +4,8 @@
 
 <div align="center">
 
-[![Build](https://github.com/DerLudditus/nautilus-compact-list/actions/workflows/build.yml/badge.svg)](https://github.com/DerLudditus/nautilus-compact-list/actions) [![Latest Release](https://img.shields.io/github/v/release/DerLudditus/nautilus-compact-list?logo=github)](https://github.com/DerLudditus/nautilus-compact-list/releases/latest)  
-[![Python: 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/) [![GTK4 / Libadwaita](https://img.shields.io/badge/GTK-4.0-4A90D9.svg?logo=gtk)](https://www.gtk.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![](https://github.com/DerLudditus/nautilus-compact-list/actions/workflows/build.yml/badge.svg)](https://github.com/DerLudditus/nautilus-compact-list/actions) [![](https://img.shields.io/github/v/release/DerLudditus/nautilus-compact-list?logo=github)](https://github.com/DerLudditus/nautilus-compact-list/releases/latest) [![](https://img.shields.io/github/downloads/DerLudditus/nautilus-compact-list/total?color=blue)](https://github.com/DerLudditus/nautilus-compact-list/releases)    
+[![](https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/) [![](https://img.shields.io/badge/GTK-4.0-4A90D9.svg?logo=gtk)](https://www.gtk.org/) [![](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 </div>
 
