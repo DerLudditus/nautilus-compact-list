@@ -25,3 +25,5 @@ CHANGELOG = """nautilus-compact-list (0.1.0-20) trixie; urgency=medium
       for "Set Max Column Width…", "Max chars:", and "Apply". Zero .mo overhead.
 
  -- Homo Ludditus <DerLudditus@gmail.com>  Thu, 05 Nov 2026 21:30:00 +0200
+"""
+
