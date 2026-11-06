@@ -3,7 +3,7 @@
 
 Name:           nautilus-compact-list
 Version:        %{pkg_version}
-Release:        %{pkg_release}%{?dist}
+Release:        %{pkg_release}
 Summary:        Classic Nautilus-style Compact List view with variable-width columns for GNOME Files
 
 License:        MIT

@@ -81,6 +81,7 @@ rpmbuild --nodeps \
          --define "_dbpath $RPM_TOPDIR/rpmdb" \
          --define "pkg_version $VERSION" \
          --define "pkg_release $RELEASE" \
+         --define "dist %{nil}" \
          -bb "$RPM_TOPDIR/SPECS/$(basename "$SPEC_FILE")"
 
 # 4. Copy resulting RPM to dist/
