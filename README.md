@@ -12,13 +12,13 @@
 <div align="center">
 
 The **Compact view** you, as a naïve GNOME user, didn’t know you needed! 👇
-![](./screenshots/ubuntu_view_3.png)
+<img src="./screenshots/ubuntu_view_3.png" width="80%">
 
 You cannot see many files in the **List view**, can you? 👇
-![](./screenshots/ubuntu_view_2.png)
+<img src="./screenshots/ubuntu_view_2.png" width="80%">
 
 The **Icon view** works well with short file names, but it is not a universal fix! 👇
-![](./screenshots/ubuntu_view_1.png)
+<img src="./screenshots/ubuntu_view_1.png" width="80%">
 
 </div>
 
@@ -79,7 +79,7 @@ When I was satisfied with the results, I decided to publish the project on GitHu
 ### 3. Key features
 
 > [!NOTE]
-> I tested this extension on **Debian 13 GNOME**, **Debian 13 XFCE** with `nautilus` added, **Ubuntu 26.04.1**, **Ubuntu 26.10**, **Fedora Workstation 45**.
+> I tested this extension on **Debian 13.7 GNOME**, **Debian 13.7 XFCE** with `nautilus` added, **Ubuntu 26.04.1**, **Ubuntu 26.10**, **Fedora Workstation 45**, **Fedora KDE Plasma Desktop 45** with `nautilus` added.
 > It should work with any recent version of GNOME. Only the file manager is actually required 🙄
 
 Top 10 relevant features:
