@@ -33,7 +33,7 @@ Note that even the file manager in Windows 3.0 had a compact view! 🤪 Yes, it 
 
 **Less is more, unless it insults my intelligence.** Besides, users of Caja, Thunar, Dolphin, PCManFM and PCManFM-Qt can have something that the users of Files (still `nautilus` under the hood) cannot have, and they are supposed to be happy?!
 
-They are not entirely alone. Users of [`cosmic-files`](https://github.com/pop-os/cosmic-files) and [`dde-file-manager`](https://github.com/linuxdeepin/dde-file-manager) can only use the same two views and two views only. How pathetic!
+They are not entirely alone. Users of [`cosmic-files`](https://github.com/pop-os/cosmic-files) and [`dde-file-manager`](https://github.com/linuxdeepin/dde-file-manager) can only use the same two views, and only those two. How pathetic!
 
 Typical GNOME users certainly don’t have the same workflow that I do. They might not need to see many files at once. They *literally cannot* use GNOME’s file manager the way I use Thunar and Windows Explorer, which is:
 * 70% of the time in a Compact List view
@@ -61,7 +61,7 @@ In a nutshell:
 
 Once I noticed [nautilus-my-computer](https://github.com/yannmasoch/nautilus-my-computer), I knew it could be done. 🎉
 
-What inspired me wasn’t the “My Computer” view, which is a Windows thing that I don’t miss under Linux. It was its newest feature, the [Column View](https://github.com/yannmasoch/nautilus-my-computer#column-view-public-beta), still in beta. These is literally an implementation of [Miller columns](https://en.wikipedia.org/wiki/Miller_columns) and must have been requested by macOS users, because the concept has been around since NeXTSTEP. 
+What inspired me wasn’t the “My Computer” view, which is a Windows thing that I don’t miss under Linux. It was its newest feature, the [Column View](https://github.com/yannmasoch/nautilus-my-computer#column-view-public-beta), still in beta. This is literally an implementation of [Miller columns](https://en.wikipedia.org/wiki/Miller_columns) and must have been requested by macOS users, because the concept has been around since NeXTSTEP. 
 
 In Linux, [FSViewer](https://github.com/roblillack/fsviewer#fsviewer) had it in WindowMaker, and Pantheon Files (the Elementary OS file manager) [also has it](https://raw.githubusercontent.com/elementary/files/main/data/screenshot-column.png).
 
