@@ -156,7 +156,7 @@ As I said, you don’t need the entire GNOME to run `nautilus`!
 
 ### 6. Architecture
 
-For an outdated, yet relatively useful explanation of the runtime widget injection and other mechanisms, see [ARCHITECTURE.md](ARCHITECTURE.md).
+For an AI-generated explanation of the runtime widget injection and other mechanisms, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ### 7. License
 
