@@ -96,7 +96,7 @@ Top 10 relevant features:
 - **Enhanced functionality when used outside a full GNOME desktop:** When Nautilus (Files) is installed on a system that only includes another desktop environment, right-clicking in an Icon or a List view doesn’t display the “Open in Terminal” / “Open in a Console” menu (or their localized versions). However, in Compact view, you’ll see the respective menu option, which opens the default terminal app for the currently active desktop environment!
  
 > [!NOTE]
-> The context menu items added by this extension have translations for a good number of major languages in [`i18n.py`](https://raw.githubusercontent.com/DerLudditus/nautilus-compact-list/refs/heads/main/nautilus_compact_list/i18n.py), using a localization catalog that prevents the complication of using `.po` files.
+> The context menu items added by this extension have translations for a good number of major languages in [`i18n.py`](https://github.com/DerLudditus/nautilus-compact-list/blob/main/nautilus_compact_list/i18n.py), using a localization catalog that prevents the complication of using `.po` files.
 
 <div align="center">
   <img src="./screenshots/locale_1.png" width="67%">
